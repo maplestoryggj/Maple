@@ -2,8 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour
-{
+public class PlayerController : MonoBehaviour{
     private Rigidbody2D rb; // Rigidbody do personagem
     private Transform tr; // Transform do personagem 
     private float height = 0f; // Altura do personagem
@@ -16,18 +15,15 @@ public class PlayerController : MonoBehaviour
  
 
     // Start is called before the first frame update
-    void Start()
-    {
+    void Start(){
         tr = GetComponent<Transform>();
         rb = GetComponent<Rigidbody2D>();
         height = tr.position.y;
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        if (Input.GetMouseButtonDown(0))
-        {
+    void Update(){
+        if (Input.GetMouseButtonDown(0)){
             startPos = Input.mousePosition;
 
             Debug.Log("1 - Pegar a posição inicial do clique" + startPos);
@@ -38,8 +34,7 @@ public class PlayerController : MonoBehaviour
 
         }
 
-        if (Input.GetMouseButtonUp(0))
-        {
+        if (Input.GetMouseButtonUp(0)){
 
             endPos = Input.mousePosition;
 
@@ -53,8 +48,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    void FixedUpdate()
-    {
+    void FixedUpdate(){
         
     }
 }
