@@ -12,6 +12,8 @@ public class LevelManager : MonoBehaviour
 
     [Header("Posições para instanciar")]
     public Vector2 bgPosition = Vector2.zero;
+    private List<Transform> bgs = new List<Transform>();
+
 
     private Transform playerTransform;
     private Transform myTransform;
@@ -23,7 +25,7 @@ public class LevelManager : MonoBehaviour
         myTransform = GetComponent<Transform>();
         Debug.Log(playerTransform.position);
 
-        GerarBG(2);
+        GerarBG(4);
     }
 
     void GerarFase()
@@ -40,6 +42,8 @@ public class LevelManager : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
+            Destroy(bgs[0].gameObject);
+            bgs.RemoveAt(0);
             GerarBG(1);
         }
 
@@ -54,7 +58,7 @@ public class LevelManager : MonoBehaviour
     {
         for(int i = 0; i < q; i++)
         {//lista de e sempre tirar o primeiro
-            Instantiate(background, bgPosition, Quaternion.identity);
+            bgs.Add(Instantiate(background, bgPosition, Quaternion.identity));
             bgPosition = new Vector2(bgPosition.x+18, 0);
         }
     }

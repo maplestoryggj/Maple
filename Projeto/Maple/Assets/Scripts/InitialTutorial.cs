@@ -6,6 +6,7 @@ public class InitialTutorial : MonoBehaviour
 {
 
     public Transform maple;
+    public int quantMaple = 5;
     public float xMin = 0f;
     public float xMax = 0f;
     public float yPos = 0f;
@@ -15,7 +16,6 @@ public class InitialTutorial : MonoBehaviour
     public float yMinForce = 0f;
     public float yMaxForce = 0f;
 
-
     // Start is called before the first frame update
     void Start()
     {
@@ -24,7 +24,7 @@ public class InitialTutorial : MonoBehaviour
 
     void GerarMaples()
     {
-        int n = Random.Range(1, 5);
+        int n = Random.Range(1, quantMaple);
 
         for (int i = 0; i < n; i++)
         {
