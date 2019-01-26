@@ -98,4 +98,13 @@ public class PlayerController : MonoBehaviour{
         }
         theDarkFear.color = tempColor;
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.gameObject.CompareTag("TopCollider"))
+        {
+            Vector2 newVel = new Vector2(rb.velocity.x, -1*rb.velocity.y);
+            rb.velocity = newVel;
+        }
+    }
 }
