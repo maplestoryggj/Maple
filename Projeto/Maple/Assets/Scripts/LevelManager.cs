@@ -45,9 +45,9 @@ public class LevelManager : MonoBehaviour
             Destroy(bgs[0].gameObject);
             bgs.RemoveAt(0);
             GerarBG(1);
-        }
+            ChangeMyPosition();
 
-        ChangeMyPosition();
+        }
     }
 
     private void ChangeMyPosition()

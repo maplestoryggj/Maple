@@ -21,7 +21,7 @@ public class Fadeio : MonoBehaviour
     void Update()
     {
         timer += Time.deltaTime;
-        Debug.Log("Timer" + timer);
+
         if (timer >= limitToFadeOut && lastCalled == 0.0) // Condicional para o texto aparecer
         {
             lastCalled = timer;

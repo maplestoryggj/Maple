@@ -76,7 +76,6 @@ public class PlayerController : MonoBehaviour{
                 yForce = 0;
             }
            
-            Debug.Log("x = " + xForce + "   y = " + yForce);
             rb.AddForce(new Vector2(xForce, yForce));
         }
     }
