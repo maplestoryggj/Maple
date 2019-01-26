@@ -33,6 +33,10 @@ public class PlayerController : MonoBehaviour
             Debug.Log("1 - Pegar a posição inicial do clique" + startPos);
 
         }
+        if (Input.GetMouseButton(0))
+        {
+
+        }
 
         if (Input.GetMouseButtonUp(0))
         {
