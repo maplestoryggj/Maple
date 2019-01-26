@@ -8,7 +8,10 @@ public class PlayerController : MonoBehaviour{
     private float height = 0f; // Altura do personagem
 
     [Header("Movimento")]
-    public int clickForce = 500;
+    public PlayerAtrib playerAtrib;
+    private float xForce = 0f;
+    private float yForce = 0f;
+
     private Plane plane = new Plane(Vector3.up, Vector3.zero);
 
     Vector2 startPos, endPos, direction;
@@ -25,26 +28,51 @@ public class PlayerController : MonoBehaviour{
     void Update(){
         if (Input.GetMouseButtonDown(0)){
             startPos = Input.mousePosition;
-
-            Debug.Log("1 - Pegar a posição inicial do clique" + startPos);
-
-        }
-        if (Input.GetMouseButton(0))
-        {
-
         }
 
         if (Input.GetMouseButtonUp(0)){
 
             endPos = Input.mousePosition;
 
-            Debug.Log("2 - Ver pra que direção for e add a força" + endPos);
-
             direction = endPos - startPos;
 
-            Debug.Log(direction);
             rb.velocity = Vector2.zero;
-            rb.AddForce(direction);
+            if (playerAtrib.CanMove)
+            {
+                if (direction.y > playerAtrib.YForce)
+                {
+                    yForce = playerAtrib.YForce;
+                }
+                else if (direction.y < -playerAtrib.YForce)
+                {
+                    yForce = -playerAtrib.YForce;
+                }
+                else
+                {
+                    yForce = direction.y;
+                }
+
+                if (direction.x > playerAtrib.XForce)
+                {
+                    xForce = playerAtrib.XForce;
+                }
+                else if (direction.x < 0)
+                {
+                    xForce = playerAtrib.XForce;
+                }
+                else
+                {
+                    xForce = direction.x;
+                }
+            }
+            else
+            {
+                xForce = 0;
+                yForce = 0;
+            }
+           
+            Debug.Log("x = " + xForce + "   y = " + yForce);
+            rb.AddForce(new Vector2(xForce, yForce));
         }
     }
 

@@ -24,8 +24,6 @@ public class followCamera : MonoBehaviour
 
         transform.position = smoothedPosition;
 
-
-
         //transform.LookAt(target);
 
     }
