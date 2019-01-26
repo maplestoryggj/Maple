@@ -16,15 +16,20 @@ public class GameManager : MonoBehaviour
     {
         playerAtrib.XForce = 100;
         playerAtrib.YForce = 50;
-        playerAtrib.CanMove = true;
+        playerAtrib.CanMove = false; // Não deixa você controlar o player
     }
 
 
     public void StartGame()
     {
-        //playButtonAnim.SetBool(); // Anima o botão
+        playButtonAnim.SetBool("Clicked", true); // Anima o botão
 
         //Mostra a animação inicial
+
+        // Chama corroutina e depois chama a animação para ensinar a mover
+
+        playerAtrib.CanMove = true; // Pode controlar o player
+
 
     }
 }
