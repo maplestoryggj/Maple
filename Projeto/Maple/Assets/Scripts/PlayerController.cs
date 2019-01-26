@@ -12,6 +12,9 @@ public class PlayerController : MonoBehaviour
     public int clickForce = 500;
     private Plane plane = new Plane(Vector3.up, Vector3.zero);
 
+    Vector2 startPos, endPos, direction;
+ 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -23,21 +26,31 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-    }
-
-    void FixedUpdate()
-    {
         if (Input.GetMouseButtonDown(0))
         {
-            Debug.Log("Pegar a posição inicial do clique");
+            startPos = Input.mousePosition;
+
+            Debug.Log("1 - Pegar a posição inicial do clique" + startPos);
+
         }
 
         if (Input.GetMouseButtonUp(0))
         {
-            Debug.Log("Ver pra que direção for e add a força");
 
-            //rb.AddForce( alguma coisa * clickForce);
+            endPos = Input.mousePosition;
+
+            Debug.Log("2 - Ver pra que direção for e add a força" + endPos);
+
+            direction = endPos - startPos;
+
+            Debug.Log(direction);
+            rb.velocity = Vector2.zero;
+            rb.AddForce(direction);
         }
+    }
+
+    void FixedUpdate()
+    {
+        
     }
 }
