@@ -53,7 +53,7 @@ public class LevelManager : MonoBehaviour
     private void GerarBG(int q)
     {
         for(int i = 0; i < q; i++)
-        {
+        {//lista de e sempre tirar o primeiro
             Instantiate(background, bgPosition, Quaternion.identity);
             bgPosition = new Vector2(bgPosition.x+18, 0);
         }
