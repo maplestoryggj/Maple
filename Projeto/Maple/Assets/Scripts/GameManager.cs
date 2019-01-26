@@ -16,7 +16,7 @@ public class GameManager : MonoBehaviour
     {
         playerAtrib.XForce = 100;
         playerAtrib.YForce = 50;
-        playerAtrib.CanMove = false; // Não deixa você controlar o player
+        playerAtrib.CanMove = true; // Não deixa você controlar o player
     }
 
 

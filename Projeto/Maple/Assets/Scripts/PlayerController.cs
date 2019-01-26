@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour{
     private Rigidbody2D rb; // Rigidbody do personagem
@@ -12,6 +13,9 @@ public class PlayerController : MonoBehaviour{
     private float xForce = 0f;
     private float yForce = 0f;
 
+    public Image theDarkFear;
+    private Color darkColor;
+
     private Plane plane = new Plane(Vector3.up, Vector3.zero);
 
     Vector2 startPos, endPos, direction;
@@ -22,6 +26,7 @@ public class PlayerController : MonoBehaviour{
         tr = GetComponent<Transform>();
         rb = GetComponent<Rigidbody2D>();
         height = tr.position.y;
+        darkColor = theDarkFear.color;
     }
 
     // Update is called once per frame
@@ -76,7 +81,21 @@ public class PlayerController : MonoBehaviour{
         }
     }
 
-    void FixedUpdate(){
-        
+    void LateUpdate(){
+        Color tempColor = darkColor;
+        float yPos = tr.position.y;
+        if(yPos > 2) // Maior que 2
+        {
+            tempColor.a = 0;
+        }else if(yPos > 0 && yPos <= 2) // Maior que 0 e menor igual a 2
+        {
+            tempColor.a = 0.5f - (yPos * .25f);
+        }
+        else
+        {
+            yPos = yPos * -1;
+            tempColor.a = 0.5f + (0.125f * yPos);
+        }
+        theDarkFear.color = tempColor;
     }
 }
