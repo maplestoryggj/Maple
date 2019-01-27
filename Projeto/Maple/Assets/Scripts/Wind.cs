@@ -4,37 +4,33 @@ using UnityEngine;
 
 public class Wind : MonoBehaviour{
 
-    
+    [Header("WindPrefab")]
+    public GameObject newWindTrail;
+    private GameObject WindTrail;
+
     private Rigidbody2D rb;
     Camera camera;
-
-    bool isBlowing = false;
 
     void Start(){
         camera = Camera.main;
         rb = GetComponent<Rigidbody2D>();
     }
     void Update(){
-        if (Input.GetMouseButtonDown(0)){
+        rb.position = camera.ScreenToWorldPoint(Input.mousePosition);
+
+        if (Input.GetMouseButtonDown(0))
             BlowWind();
-        }
-        else if (Input.GetMouseButtonUp(0)){
+        else if (Input.GetMouseButtonUp(0))
             StopBlowWind();
-        }
-
-        if(isBlowing){
-            updateWindTrail();
-        }
-
     }
     void updateWindTrail(){
-        rb.position = camera.ScreenToWorldPoint(Input.mousePosition);
     }
 
     public void BlowWind(){
-        isBlowing = true;
+        WindTrail = Instantiate(newWindTrail, transform);
     }
     public void StopBlowWind(){
-        isBlowing = false;
+        WindTrail.transform.SetParent(null);
+        Destroy(WindTrail, 1f);
     }
 }
