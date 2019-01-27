@@ -37,7 +37,7 @@ public class LevelManager : MonoBehaviour
         //int numArv = GetRandomIndex(1, 5);
         for (int i = 0; i < numArv; i++)
         {
-            Instantiate(arvores[GetRandomIndex(1, arvores.Length)], new Vector3(xStartPosition, GetRandomIndex(-3, 1), 0), Quaternion.identity);
+            Instantiate(arvores[GetRandomIndex(1, arvores.Length)], new Vector3(xStartPosition, GetRandomIndex(-3, 2), 0), Quaternion.identity);
             xStartPosition = xStartPosition + xPlusPosition;
             Debug.Log(xStartPosition);
             if (i % 2 == 0)
