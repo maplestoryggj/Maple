@@ -9,11 +9,12 @@ public class LevelManager : MonoBehaviour
     public Transform[] arvores;
     public Transform[] pedras;
     public Transform background;
+    public float xStartPosition;
+    public float xPlusPosition;
 
     [Header("Posições para instanciar")]
     public Vector2 bgPosition = Vector2.zero;
     private List<Transform> bgs = new List<Transform>();
-
 
     private Transform playerTransform;
     private Transform myTransform;
@@ -30,12 +31,18 @@ public class LevelManager : MonoBehaviour
 
     void GerarFase()
     {
-        /*for (int i = 0; i < n; i++)
+        int numArv = GetRandomIndex(5);
+        for (int i = 0; i < numArv; i++)
         {
-            Instantiate(environments[GetRandomIndex(environmentsCount)], new Vector3(xStartPosition, 0, 0), Quaternion.identity);
+            Instantiate(arvores[GetRandomIndex(arvores.Length)], new Vector3(xStartPosition, 0, 0), Quaternion.identity);
             xStartPosition += xPlusPosition;
-        }*/
+        }
 
+    }
+
+    int GetRandomIndex(int n)
+    {
+        return Random.Range(1, n);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
