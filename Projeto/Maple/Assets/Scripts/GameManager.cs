@@ -54,7 +54,7 @@ public class GameManager : MonoBehaviour
         if(fraseIndex == 4)
         {
             playerAtrib.CanMove = true; // Você você controlar o player
-        }else if(fraseIndex == 7)
+        }else if(fraseIndex == 9)
         {
             playerAtrib.CanEnd = true;
         }

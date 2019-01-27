@@ -136,7 +136,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 104480253}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 28.4, y: 5.19, z: 0}
+  m_LocalPosition: {x: 54.3, y: 5.19, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 519420032}
@@ -1343,7 +1343,7 @@ MonoBehaviour:
   playerAtrib: {fileID: 11400000, guid: 5d4eeaeee8b7a6840a7eace8a870a063, type: 2}
   theDarkFear: {fileID: 1175999806}
   fraseText: {fileID: 1550180776}
-  fraseFinal: Frase final sobre lar
+  fraseFinal: Frase final
 --- !u!50 &1554040315
 Rigidbody2D:
   serializedVersion: 4
