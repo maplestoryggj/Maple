@@ -9,6 +9,8 @@ public class GameManager : MonoBehaviour
 
     [Header("About the Player")]
     public PlayerAtrib playerAtrib;
+    public Rigidbody2D playerRB;
+    public Vector2 forcaInicial;
 
     [Header("About the PlayButton")]
     public Animator playButtonAnim;
@@ -54,7 +56,9 @@ public class GameManager : MonoBehaviour
         if(fraseIndex == 4)
         {
             playerAtrib.CanMove = true; // Você você controlar o player
-        }else if(fraseIndex == 9)
+            playerRB.AddForce(forcaInicial);
+        }
+        else if(fraseIndex == 9)
         {
             playerAtrib.CanEnd = true;
         }

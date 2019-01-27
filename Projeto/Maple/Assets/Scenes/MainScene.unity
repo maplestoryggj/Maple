@@ -595,6 +595,8 @@ MonoBehaviour:
   pedras: []
   background: {fileID: 8704528350824719825, guid: 8f7415f5e464d09448bf300e8aa851ce,
     type: 3}
+  xStartPosition: 0
+  xPlusPosition: 0
   bgPosition: {x: -18, y: 0}
 --- !u!4 &472668442
 Transform:
@@ -1589,6 +1591,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerAtrib: {fileID: 11400000, guid: 5d4eeaeee8b7a6840a7eace8a870a063, type: 2}
+  playerRB: {fileID: 1554040315}
+  forcaInicial: {x: 45, y: -3}
   playButtonAnim: {fileID: 1889889670}
   fraseText: {fileID: 1884522901}
   frases:
@@ -2062,7 +2066,7 @@ MonoBehaviour:
   sounds:
   - name: Background1
     clip: {fileID: 8300000, guid: 43f998868aa86504e8adbe194fe1c6f3, type: 3}
-    volume: 0.563
+    volume: 0.259
     pitch: 0.86
     source: {fileID: 0}
     loop: 1
