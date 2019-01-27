@@ -37,9 +37,8 @@ public class PlayerController : MonoBehaviour{
 
     // Update is called once per frame
     void Update(){
-        if (Input.GetMouseButtonDown(0)){
+        if (Input.GetMouseButtonDown(0))
             startPos = Input.mousePosition;
-        }
 
         if (Input.GetMouseButtonUp(0)){
 
@@ -48,36 +47,23 @@ public class PlayerController : MonoBehaviour{
             direction = endPos - startPos;
 
             rb.velocity = Vector2.zero;
-            if (playerAtrib.CanMove)
-            {
+            if (playerAtrib.CanMove){
                 if (direction.y > playerAtrib.YForce)
-                {
                     yForce = playerAtrib.YForce;
-                }
                 else if (direction.y < -playerAtrib.YForce)
-                {
                     yForce = -playerAtrib.YForce;
-                }
                 else
-                {
                     yForce = direction.y;
-                }
 
                 if (direction.x > playerAtrib.XForce)
-                {
                     xForce = playerAtrib.XForce;
-                }
                 else if (direction.x < 0)
-                {
                     xForce = playerAtrib.XForce;
-                }
                 else
-                {
                     xForce = direction.x;
-                }
+
             }
-            else
-            {
+            else{
                 xForce = 0;
                 yForce = 0;
             }
@@ -87,19 +73,14 @@ public class PlayerController : MonoBehaviour{
     }
 
     void LateUpdate(){
-        if (playerAtrib.CanMove)
-        {
+        if (playerAtrib.CanMove){
             Color tempColor = darkColor;
             float yPos = tr.position.y;
             if(yPos > 2) // Maior que 2
-            {
                 tempColor.a = 0;
-            }else if(yPos > 0 && yPos <= 2) // Maior que 0 e menor igual a 2
-            {
+            else if(yPos > 0 && yPos <= 2) // Maior que 0 e menor igual a 2
                 tempColor.a = 0.5f - (yPos * .25f);
-            }
-            else
-            {
+            else{
                 yPos = yPos * -1;
                 tempColor.a = 0.5f + (0.135f * yPos);
             }
@@ -107,30 +88,25 @@ public class PlayerController : MonoBehaviour{
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if(collision.gameObject.CompareTag("TopCollider"))
-        {
+    private void OnTriggerEnter2D(Collider2D collision){
+        if(collision.gameObject.CompareTag("TopCollider")){
             Vector2 newVel = new Vector2(rb.velocity.x, -1*rb.velocity.y);
             rb.velocity = newVel;
-        }else if (collision.gameObject.CompareTag("BotCollider"))
-        {
-            if (playerAtrib.CanEnd)
-            {
+        }
+        else if (collision.gameObject.CompareTag("BotCollider")){
+            if (playerAtrib.CanEnd){
                 playerAtrib.CanMove = false; // Não deixa você controlar o player
                 rb.velocity = Vector2.zero;
                 Invoke("TheBegin", 5f);
             }
-            else
-            {
+            else{
                 Vector2 newVel = new Vector2(rb.velocity.x, -1 * rb.velocity.y);
                 rb.velocity = newVel;
             }
         }
     }
 
-    private void TheBegin()
-    {
+    private void TheBegin(){
 
         fraseText.text = fraseFinal;
         Debug.Log("Animação virando arvorinha");
