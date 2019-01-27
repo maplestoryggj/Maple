@@ -23,14 +23,12 @@ public class Wind : MonoBehaviour{
         else if (Input.GetMouseButtonUp(0))
             StopBlowWind();
     }
-    void updateWindTrail(){
-    }
 
     public void BlowWind(){
         WindTrail = Instantiate(newWindTrail, transform);
     }
     public void StopBlowWind(){
         WindTrail.transform.SetParent(null);
-        Destroy(WindTrail, 1f);
+        Destroy(WindTrail, 0.2f);
     }
 }
