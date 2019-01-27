@@ -112,85 +112,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &60838755
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 60838756}
-  - component: {fileID: 60838757}
-  m_Layer: 0
-  m_Name: Grama
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &60838756
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 60838755}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.97, y: -3.8, z: 0}
-  m_LocalScale: {x: 0.93298, y: 0.61635, z: 1}
-  m_Children: []
-  m_Father: {fileID: 567024457}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &60838757
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 60838755}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: a1e52f86585c7c5409201e6942293245, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 0
-  m_SelectedEditorRenderState: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 4
-  m_Sprite: {fileID: 21300000, guid: 35dd873745af4de499595ef022362f62, type: 3}
-  m_Color: {r: 0, g: 0.05882353, b: 0.33333334, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
-  m_AdaptiveModeThreshold: 0.5
-  m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
 --- !u!1 &104480253
 GameObject:
   m_ObjectHideFlags: 0
@@ -347,8 +268,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 240949776}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.34, y: 0.81, z: 0}
-  m_LocalScale: {x: 0.9329807, y: 0.6163469, z: 1}
+  m_LocalPosition: {x: -8.1, y: 8, z: 0}
+  m_LocalScale: {x: 2.3715436, y: 1.5666921, z: 2.5419}
   m_Children: []
   m_Father: {fileID: 567024457}
   m_RootOrder: 0
@@ -389,7 +310,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 4
+  m_SortingOrder: 5
   m_Sprite: {fileID: 21300000, guid: c46608bce8dded34588e2c47497f6a0b, type: 3}
   m_Color: {r: 0, g: 0.05882353, b: 0.33333334, a: 1}
   m_FlipX: 0
@@ -670,12 +591,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4769d1638af7b3f4c92c5d57ebce6c11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  arvores: []
+  arvores:
+  - {fileID: 8653145391235175322, guid: 5f2a52b175fbad14fb0f6ce15321b1ad, type: 3}
+  - {fileID: 450164676430566330, guid: 3182abb4c434e244c946d2727473377e, type: 3}
+  - {fileID: 8987978971342232366, guid: b88580cc6efd1d74183e05bc673e009b, type: 3}
   pedras: []
+  grama: {fileID: 1422196468369001451, guid: cdde2be5b44b48e40b976eb7fef5e17f, type: 3}
   background: {fileID: 8704528350824719825, guid: 8f7415f5e464d09448bf300e8aa851ce,
     type: 3}
-  xStartPosition: 0
-  xPlusPosition: 0
+  xPlusPosition: 2
+  numArv: 9
   bgPosition: {x: -18, y: 0}
 --- !u!4 &472668442
 Transform:
@@ -906,7 +831,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 240949777}
-  - {fileID: 60838756}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1055,7 +979,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 3e5983df598ee034d8bf70b9441a7465, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

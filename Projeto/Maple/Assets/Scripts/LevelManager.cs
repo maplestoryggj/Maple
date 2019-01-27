@@ -8,9 +8,11 @@ public class LevelManager : MonoBehaviour
     [Header("GameOjects para instanciar")]
     public Transform[] arvores;
     public Transform[] pedras;
+    public Transform grama;
     public Transform background;
-    public float xStartPosition;
-    public float xPlusPosition;
+    private float xStartPosition;
+    public float xPlusPosition = 2f;
+    public int numArv = 9;
 
     [Header("Posições para instanciar")]
     public Vector2 bgPosition = Vector2.zero;
@@ -22,6 +24,7 @@ public class LevelManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        xStartPosition = bgPosition.x;
         playerTransform = FindObjectOfType<PlayerController>().GetComponent<Transform>();
         myTransform = GetComponent<Transform>();
         Debug.Log(playerTransform.position);
@@ -31,18 +34,23 @@ public class LevelManager : MonoBehaviour
 
     void GerarFase()
     {
-        int numArv = GetRandomIndex(5);
+        //int numArv = GetRandomIndex(1, 5);
         for (int i = 0; i < numArv; i++)
         {
-            Instantiate(arvores[GetRandomIndex(arvores.Length)], new Vector3(xStartPosition, 0, 0), Quaternion.identity);
-            xStartPosition += xPlusPosition;
+            Instantiate(arvores[GetRandomIndex(1, arvores.Length)], new Vector3(xStartPosition, GetRandomIndex(-3, 1), 0), Quaternion.identity);
+            xStartPosition = xStartPosition + xPlusPosition;
+            Debug.Log(xStartPosition);
+            if (i % 2 == 0)
+            {
+                Instantiate(grama, new Vector3(xStartPosition, -3.8f, 0), Quaternion.identity);
+            }
         }
 
     }
 
-    int GetRandomIndex(int n)
+    int GetRandomIndex(int min, int max)
     {
-        return Random.Range(1, n);
+        return Random.Range(min, max);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -66,7 +74,10 @@ public class LevelManager : MonoBehaviour
         for(int i = 0; i < q; i++)
         {//lista de e sempre tirar o primeiro
             bgs.Add(Instantiate(background, bgPosition, Quaternion.identity));
+            xStartPosition = bgPosition.x;
+            GerarFase();
             bgPosition = new Vector2(bgPosition.x+18, 0);
+            
         }
     }
 }
