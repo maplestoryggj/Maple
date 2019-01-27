@@ -750,7 +750,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.03512907, y: -4.43}
+  m_Offset: {x: 0.035129547, y: -4.6330647}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -761,7 +761,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 17.719448, y: 1.1053753}
+  m_Size: {x: 17.719448, y: 0.69924545}
   m_EdgeRadius: 0
 --- !u!1 &567024456
 GameObject:
@@ -1371,7 +1371,17 @@ MonoBehaviour:
   - "Isso n\xE3o parece ser uma coisa boa"
   - Parece que chegou a sua hora!
   - Tome cuidado!
+  - "Voc\xEA perdeu o seu lar"
+  - "Mas n\xE3o est\xE1 tudo acabado!"
+  - Encontre um novo lugar
+  - Se encontre numa nova forma
+  - "N\xE3o tenha medo de nada"
   tempoAcaba:
+  - 5
+  - 5
+  - 5
+  - 5
+  - 5
   - 5
   - 5
   - 5
@@ -1382,6 +1392,11 @@ MonoBehaviour:
   - 5
   - 5
   - 5
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
   - 0
 --- !u!4 &1814380120
 Transform:

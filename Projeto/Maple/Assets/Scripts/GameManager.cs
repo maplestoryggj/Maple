@@ -5,6 +5,7 @@ using TMPro;
 
 public class GameManager : MonoBehaviour
 {
+    private Transform transform;
 
     [Header("About the Player")]
     public PlayerAtrib playerAtrib;
@@ -18,10 +19,12 @@ public class GameManager : MonoBehaviour
     public List<float> tempoAcaba = new List<float>(); // Tempo para começar a sumir
     public List<float> tempoProxima = new List<float>(); // Tempo para mostrar a próxima
     private int fraseIndex = -1;
+    private float xPosToAdd = 20f;
 
     // Start is called before the first frame update
     void Start()
     {
+        transform = GetComponent<Transform>();
         fraseText.canvasRenderer.SetAlpha(0.0f);
         playerAtrib.XForce = 100;
         playerAtrib.YForce = 50;
@@ -41,7 +44,7 @@ public class GameManager : MonoBehaviour
     {
         if(fraseIndex == frases.Count-1) // Mostrou tudo
         {
-            fraseIndex = 0; // Começa a repetir
+            fraseIndex = 4; // Começa a repetir
         }
         else
         {
@@ -80,7 +83,9 @@ public class GameManager : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            Debug.Log("Devo mostrar a próxima frase e adicionar minha posição para o próximo local");
+            ShowText();
+
+            transform.position = new Vector2(transform.position.x + xPosToAdd, transform.position.y);
         }
     }
 }
