@@ -7,8 +7,10 @@ public class InitialTutorial : MonoBehaviour
 
     public Transform maple;
     public int quantMaple = 5;
-    public float xMin = 0f;
-    public float xMax = 0f;
+    public Transform xMinTr;
+    public Transform xMaxTr;
+    private float xMin = 0f;
+    private float xMax = 0f;
     public float yPos = 0f;
 
     public float xMinForce = 0f;
@@ -28,6 +30,8 @@ public class InitialTutorial : MonoBehaviour
 
         for (int i = 0; i < n; i++)
         {
+            xMin = xMinTr.position.x;
+            xMax = xMaxTr.position.x;
             float xPos = Random.Range(xMin, xMax);
             Transform mapleI = Instantiate(maple, new Vector2(xPos, yPos), Quaternion.identity);
             mapleI.GetComponent<Rigidbody2D>().AddForce(new Vector2(
