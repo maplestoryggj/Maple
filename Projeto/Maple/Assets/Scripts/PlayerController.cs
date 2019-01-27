@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -16,6 +17,10 @@ public class PlayerController : MonoBehaviour{
     public Image theDarkFear;
     private Color darkColor;
 
+    [Header("Sobre o Fim")]
+    public TextMeshProUGUI fraseText;
+    public string fraseFinal;
+
     private Plane plane = new Plane(Vector3.up, Vector3.zero);
 
     Vector2 startPos, endPos, direction;
@@ -23,6 +28,7 @@ public class PlayerController : MonoBehaviour{
 
     // Start is called before the first frame update
     void Start(){
+        fraseText.canvasRenderer.SetAlpha(0.0f);
         tr = GetComponent<Transform>();
         rb = GetComponent<Rigidbody2D>();
         height = tr.position.y;
@@ -81,21 +87,24 @@ public class PlayerController : MonoBehaviour{
     }
 
     void LateUpdate(){
-        Color tempColor = darkColor;
-        float yPos = tr.position.y;
-        if(yPos > 2) // Maior que 2
+        if (playerAtrib.CanMove)
         {
-            tempColor.a = 0;
-        }else if(yPos > 0 && yPos <= 2) // Maior que 0 e menor igual a 2
-        {
-            tempColor.a = 0.5f - (yPos * .25f);
+            Color tempColor = darkColor;
+            float yPos = tr.position.y;
+            if(yPos > 2) // Maior que 2
+            {
+                tempColor.a = 0;
+            }else if(yPos > 0 && yPos <= 2) // Maior que 0 e menor igual a 2
+            {
+                tempColor.a = 0.5f - (yPos * .25f);
+            }
+            else
+            {
+                yPos = yPos * -1;
+                tempColor.a = 0.5f + (0.135f * yPos);
+            }
+            theDarkFear.color = tempColor;
         }
-        else
-        {
-            yPos = yPos * -1;
-            tempColor.a = 0.5f + (0.125f * yPos);
-        }
-        theDarkFear.color = tempColor;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -104,6 +113,29 @@ public class PlayerController : MonoBehaviour{
         {
             Vector2 newVel = new Vector2(rb.velocity.x, -1*rb.velocity.y);
             rb.velocity = newVel;
+        }else if (collision.gameObject.CompareTag("BotCollider"))
+        {
+            if (playerAtrib.CanEnd)
+            {
+                playerAtrib.CanMove = false; // Não deixa você controlar o player
+                rb.velocity = Vector2.zero;
+                Invoke("TheBegin", 5f);
+            }
+            else
+            {
+                Vector2 newVel = new Vector2(rb.velocity.x, -1 * rb.velocity.y);
+                rb.velocity = newVel;
+            }
         }
+    }
+
+    private void TheBegin()
+    {
+
+        fraseText.text = fraseFinal;
+        Debug.Log("Animação virando arvorinha");
+        fraseText.CrossFadeAlpha(1.0f, 20f, true);
+
+        theDarkFear.CrossFadeAlpha(0.0f, 15f, true);
     }
 }

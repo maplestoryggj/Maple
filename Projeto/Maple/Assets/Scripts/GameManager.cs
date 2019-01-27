@@ -29,6 +29,7 @@ public class GameManager : MonoBehaviour
         playerAtrib.XForce = 100;
         playerAtrib.YForce = 50;
         playerAtrib.CanMove = false; // Não deixa você controlar o player
+        playerAtrib.CanEnd = false;
     }
 
 
@@ -53,6 +54,9 @@ public class GameManager : MonoBehaviour
         if(fraseIndex == 4)
         {
             playerAtrib.CanMove = true; // Você você controlar o player
+        }else if(fraseIndex == 7)
+        {
+            playerAtrib.CanEnd = true;
         }
 
         fraseText.text = frases[fraseIndex];
@@ -61,7 +65,7 @@ public class GameManager : MonoBehaviour
 
     IEnumerator FadeIn()
     {
-        fraseText.CrossFadeAlpha(1.0f, 2.5f, true);
+        fraseText.CrossFadeAlpha(1.0f, 3f, true);
 
         yield return new WaitForSeconds(tempoAcaba[fraseIndex]);
 
@@ -70,7 +74,7 @@ public class GameManager : MonoBehaviour
 
     IEnumerator FadeOut()
     {
-        fraseText.CrossFadeAlpha(0.0f, 2.5f, true);
+        fraseText.CrossFadeAlpha(0.0f, 3f, true);
 
         if(tempoProxima[fraseIndex] > 0f)
         {
