@@ -18,4 +18,5 @@ The 2019 GGJ theme was *'What home means to you'* and we think that home is wher
 * **Guilherme A Pacanaro** - *Game Designer*
 * **Ian Mariano Pessota da Silva** - *Programmer/Artist*
 * **Leonardo Crivellaro** - *Programmer* - [leocrivels](https://github.com/leocrivels)
+* **Rodrigo Faleiros** - *Music* - [WagginTail](www.waggintail.com.br)
 * **Yuri Barbosa da Silva de Oliveira** - *Artist*
