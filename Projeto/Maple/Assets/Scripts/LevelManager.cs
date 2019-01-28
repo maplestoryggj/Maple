@@ -40,9 +40,9 @@ public class LevelManager : MonoBehaviour
             Instantiate(arvores[GetRandomIndex(1, arvores.Length)], new Vector3(xStartPosition, GetRandomIndex(-3, 2), 0), Quaternion.identity);
             xStartPosition = xStartPosition + xPlusPosition;
             Debug.Log(xStartPosition);
-            if (i % 2 == 0)
+            if (i % 3 == 0)
             {
-                Instantiate(grama, new Vector3(xStartPosition, -3.8f, 0), Quaternion.identity);
+                Instantiate(grama, new Vector3(xStartPosition, -3.489f, 0), Quaternion.identity);
             }
         }
 

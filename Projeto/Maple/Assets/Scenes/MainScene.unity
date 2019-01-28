@@ -124,7 +124,7 @@ GameObject:
   m_Layer: 0
   m_Name: xMax
   m_TagString: Untagged
-  m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -268,8 +268,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 240949776}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.1, y: 8, z: 0}
-  m_LocalScale: {x: 2.3715436, y: 1.5666921, z: 2.5419}
+  m_LocalPosition: {x: -10.63, y: 4.8, z: 0}
+  m_LocalScale: {x: 1.7952586, y: 1.1859859, z: 1.9242183}
   m_Children: []
   m_Father: {fileID: 567024457}
   m_RootOrder: 0
@@ -310,9 +310,9 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 5
-  m_Sprite: {fileID: 21300000, guid: c46608bce8dded34588e2c47497f6a0b, type: 3}
-  m_Color: {r: 0, g: 0.05882353, b: 0.33333334, a: 1}
+  m_SortingOrder: 7
+  m_Sprite: {fileID: 21300000, guid: 4ec4926fb22892141bd958e468306d7a, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -552,7 +552,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 10
   m_Sprite: {fileID: 21300000, guid: 3628926f5be224a4bbe6497bd691bc41, type: 3}
-  m_Color: {r: 0.31011927, g: 0.37026477, b: 0.6509434, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -589,7 +589,7 @@ GameObject:
   m_Layer: 0
   m_Name: LevelManager
   m_TagString: Untagged
-  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -606,15 +606,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arvores:
-  - {fileID: 8653145391235175322, guid: 5f2a52b175fbad14fb0f6ce15321b1ad, type: 3}
-  - {fileID: 450164676430566330, guid: 3182abb4c434e244c946d2727473377e, type: 3}
-  - {fileID: 8987978971342232366, guid: b88580cc6efd1d74183e05bc673e009b, type: 3}
+  - {fileID: 9148463872485935890, guid: cd27c9d7ee107ca4bacc0d2242e17434, type: 3}
+  - {fileID: 3921811564797957132, guid: bd1fd2a56f2d95546b216d824dfb1dbc, type: 3}
+  - {fileID: 526014803865842571, guid: f68e3b16e6851654cb157cd9e2ab5e17, type: 3}
+  - {fileID: 5651773603039749066, guid: b44f6ac2827e0aa46a950d692a646eda, type: 3}
   pedras: []
   grama: {fileID: 1422196468369001451, guid: cdde2be5b44b48e40b976eb7fef5e17f, type: 3}
   background: {fileID: 8704528350824719825, guid: 8f7415f5e464d09448bf300e8aa851ce,
     type: 3}
   xPlusPosition: 2
-  numArv: 9
+  numArv: 8
   bgPosition: {x: -18, y: 0}
 --- !u!4 &472668442
 Transform:
@@ -940,7 +941,7 @@ GameObject:
   m_Layer: 0
   m_Name: xMin
   m_TagString: Untagged
-  m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -983,7 +984,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1034940031}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -4.5, z: 10}
+  m_LocalPosition: {x: 0, y: -6.63, z: 10}
   m_LocalScale: {x: 19, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 519420032}
@@ -1025,9 +1026,9 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 5
-  m_Sprite: {fileID: 21300000, guid: 319a323f05acaf845b08bb64467865ca, type: 3}
-  m_Color: {r: 0.5566038, g: 0.44776973, b: 0.20741367, a: 1}
+  m_SortingOrder: 2
+  m_Sprite: {fileID: 21300000, guid: ec1b104500fdaaf49ac82d0916c4f4d7, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -1234,8 +1235,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4286033883
+  m_fontColor: {r: 0.85882354, g: 0.6862745, b: 0.46666667, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1355,7 +1356,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1554040312}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.5, y: 2.67, z: 0}
+  m_LocalPosition: {x: -9.34, y: 2.34, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 415990311}
@@ -1377,7 +1378,7 @@ MonoBehaviour:
   playerAtrib: {fileID: 11400000, guid: 5d4eeaeee8b7a6840a7eace8a870a063, type: 2}
   theDarkFear: {fileID: 1175999806}
   fraseText: {fileID: 1550180776}
-  fraseFinal: Frase final
+  fraseFinal: Facing our fears, we can make any place perfect.
 --- !u!50 &1554040315
 Rigidbody2D:
   serializedVersion: 4
@@ -1628,16 +1629,16 @@ MonoBehaviour:
   playButtonAnim: {fileID: 1889889670}
   fraseText: {fileID: 1884522901}
   frases:
-  - "O vento est\xE1 forte"
-  - "Todos est\xE3o caindo"
-  - "Isso n\xE3o parece ser uma coisa boa"
-  - Parece que chegou a sua hora!
-  - Tome cuidado!
-  - "Voc\xEA perdeu o seu lar"
-  - "Mas n\xE3o est\xE1 tudo acabado!"
-  - Encontre um novo lugar
-  - Se encontre numa nova forma
-  - "N\xE3o tenha medo de nada"
+  - The wind is strong
+  - Everyone is falling
+  - This does not seem to be a good thing
+  - Looks like your time has come!
+  - Be careful!
+  - You lost your home.
+  - But it's not over!
+  - Find a new place
+  - Find yourself in a new way
+  - Do not be afraid of anything
   tempoAcaba:
   - 5
   - 5
@@ -1801,8 +1802,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4285968090
+  m_fontColor: {r: 0.8584906, g: 0.6840055, b: 0.46569067, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
